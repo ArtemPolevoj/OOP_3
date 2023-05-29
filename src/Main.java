@@ -1,8 +1,11 @@
 import Task1.Cat;
+import Task1.IGoes;
 import Task1.Owner;
 import Task2.Rectangle;
 import Task3.Book;
 import Task3.Library;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,6 +13,12 @@ public class Main {
         Owner owner = new Owner("Артем");
         Cat cat = new Cat("Васька", 2, owner);
         cat.greet();
+        cat.goes();
+        owner.goes();
+        ArrayList<IGoes> goes = new ArrayList<>();
+        goes.add(owner);
+        goes.add(cat);
+
 
         System.out.println("\nTask 2.");
         Rectangle rectangle = new Rectangle(5, 10);

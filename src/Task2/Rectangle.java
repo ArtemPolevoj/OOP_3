@@ -1,11 +1,11 @@
 package Task2;
 
-public class Rectangle {
+public class Rectangle implements IRectangle{
     private double width;
     private double height;
 
     public Rectangle() {
-        this(0, 0);
+        this(MIN_WIDTH, MIN_HEIGHT);
     }
 
     public Rectangle(double width, double height) {
@@ -18,7 +18,7 @@ public class Rectangle {
     }
 
     public void setWidth(double width) {
-        this.width = Math.max(width, 0);
+        this.width = Math.max(width, MIN_WIDTH);
     }
 
     public double getHeight() {
@@ -26,13 +26,13 @@ public class Rectangle {
     }
 
     public void setHeight(double height) {
-        this.height = Math.max(height, 0);
+        this.height = Math.max(height, MIN_HEIGHT);
     }
-
+@Override
     public double calculateArea() {
         return getHeight() * getWidth();
     }
-
+@Override
     public double calculatePerimeter() {
         return (2 * (getWidth() + getHeight()));
     }

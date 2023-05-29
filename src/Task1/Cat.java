@@ -1,6 +1,6 @@
 package Task1;
 
-public class Cat {
+public class Cat implements ICat, IGoes {
     private String name;
     private int age;
     private Owner owner;
@@ -41,20 +41,17 @@ public class Cat {
         else this.owner = owner;
     }
 
-    @Override
-    public String toString() {
-        return "Cat{" +
-                "name=" + getName() +
-                ", age=" + getAge() +
-                ", owner=" + getOwner().getName() +
-                '}';
-    }
-
+@Override
     public void greet() {
         System.out.printf("Мяу! Меня зовут %s." +
                         " Мне %d года(лет)." +
                         " Мой владелец - %s.\n",
                 getName(), getAge(), getOwner().getName());
+    }
+
+    @Override
+    public void goes() {
+        System.out.println("Кот идет.");
     }
 }
 

@@ -1,8 +1,8 @@
 package Task3;
 
-public class Book {
+public class Book implements  IBook{
     static int count = 1;
-    private final int ID= count++;
+    private final int ID = count++;
     private String title;
     private String author;
     private boolean available;
@@ -28,11 +28,11 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
-
+@Override
     public boolean isAvailable() {
         return available;
     }
-
+@Override
     public void setAvailable(boolean available) {
         this.available = available;
     }
