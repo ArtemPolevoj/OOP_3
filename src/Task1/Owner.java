@@ -4,7 +4,7 @@ public class Owner {
     private String name;
 
     public Owner() {
-        this.name = "undefined";
+        setName("");
     }
 
     public Owner(String name) {
@@ -16,13 +16,13 @@ public class Owner {
     }
 
     public void setName(String name) {
-        if (name.equals("")) this.name = "undefined";
+        if (name.equals("")) this.name = "none";
         else this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Task1.Owner{" +
+        return "Owner{" +
                 "name='" + name + '\'' +
                 '}';
     }

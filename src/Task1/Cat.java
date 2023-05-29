@@ -8,11 +8,11 @@ public class Cat {
     public Cat(String name, int age, Owner owner) {
         setName(name);
         setAge(age);
-        this.owner = owner;
+        setOwner(owner);
     }
 
     public Cat() {
-        this("", 0, new Owner());
+        this("", 0, null);
     }
 
     public String getName() {
@@ -20,7 +20,7 @@ public class Cat {
     }
 
     public void setName(String name) {
-        if (name.equals("")) this.name = "undefined";
+        if (name.isEmpty()) this.name = "none";
         else this.name = name;
     }
 
@@ -37,21 +37,24 @@ public class Cat {
     }
 
     public void setOwner(Owner owner) {
-        this.owner = owner;
+        if (owner == null) this.owner = new Owner();
+        else this.owner = owner;
     }
 
     @Override
     public String toString() {
-        return "Task1.Cat{" +
-                "name=" + name +
-                ", age=" + age +
-                ", owner=" + owner.getName() +
+        return "Cat{" +
+                "name=" + getName() +
+                ", age=" + getAge() +
+                ", owner=" + getOwner().getName() +
                 '}';
     }
 
     public void greet() {
-        System.out.printf("Мяу! Меня зовут %s. Мне %d года(лет). Мой владелец - %s",
-                getName(), getAge(), owner.getName());
+        System.out.printf("Мяу! Меня зовут %s." +
+                        " Мне %d года(лет)." +
+                        " Мой владелец - %s.\n",
+                getName(), getAge(), getOwner().getName());
     }
 }
 
