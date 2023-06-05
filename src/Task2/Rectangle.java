@@ -41,4 +41,12 @@ public class Rectangle implements IRectangle{
         //return (2 * (getWidth() + getHeight()));
         return result.getResult(getWidth(), getHeight());
     }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "width=" + width +
+                ", height=" + height +
+                '}';
+    }
 }
