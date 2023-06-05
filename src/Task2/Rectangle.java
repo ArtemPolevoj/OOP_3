@@ -3,6 +3,7 @@ package Task2;
 public class Rectangle implements IRectangle{
     private double width;
     private double height;
+    IResult result;
 
     public Rectangle() {
         this(MIN_WIDTH, MIN_HEIGHT);
@@ -30,10 +31,14 @@ public class Rectangle implements IRectangle{
     }
 @Override
     public double calculateArea() {
-        return getHeight() * getWidth();
+        result = ((x, y) -> x * y);
+        //return getHeight() * getWidth();
+        return  result.getResult(getWidth(), getHeight());
     }
 @Override
     public double calculatePerimeter() {
-        return (2 * (getWidth() + getHeight()));
+        result = ((x, y) -> 2 * (x + y));
+        //return (2 * (getWidth() + getHeight()));
+        return result.getResult(getWidth(), getHeight());
     }
 }
